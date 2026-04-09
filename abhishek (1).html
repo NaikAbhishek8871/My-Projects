@@ -1,27 +1,313 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<style>
-    /* Basic styling to mimic original output */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Drives</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #03283D;
+      --secondary-color: #ff6a3d;
+      --text-light: #d3d3d3;
+      --white: #fff;
+      --navbar-height: 80px;
+    }
+      
     body {
-        font-family: sans-serif;
+      padding-top: var(--navbar-height);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    #name-container p {
-        margin: 0;
-        padding: 0.1em 0;
+
+    .navbar {
+      background-color: var(--white) !important;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      padding: 10px 0;
+      min-height: var(--navbar-height);
     }
-</style>
+
+    .logo-img {
+      height: 50px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-left: 10px;
+      text-decoration: none;
+      line-height: 1;
+    }
+    
+    .logo-text span {
+      color: var(--secondary-color);
+    }
+
+    .nav-link {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary-color) !important;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--secondary-color) !important;
+    }
+
+    .social-icons a {
+      font-size: 16px;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+      background: #f8f9fa;
+      width: 35px;
+      height: 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary-color);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .background {
+      background: linear-gradient(rgba(3, 40, 61, 0.8), rgba(3, 40, 61, 0.8)), url('07-08-21-01-Engineering.png') no-repeat center center/cover;
+      min-height: calc(100vh - var(--navbar-height));
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .background-content {
+      color: var(--white);
+      padding: 0 20px;
+    }
+
+    .bg-title {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .bg-title-2 {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+      color: var(--text-light);
+    }
+
+    .btn-custom {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      padding: 12px 35px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: 2px solid var(--secondary-color);
+    }
+
+    .btn-custom:hover {
+      background-color: transparent;
+      color: var(--secondary-color);
+    }
+
+    .footer {
+      background-color: var(--primary-color);   
+      width: 100%;
+      color: var(--white);
+    }
+
+    .footer-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--secondary-color); 
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary-color);
+    }
+
+    .footer-text {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links li a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 15px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-links li a:hover {
+      color: var(--secondary-color);
+      transform: translateX(5px);
+    }
+
+    .footer-contact {
+      color: var(--text-light);
+      font-size: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-contact i {
+      color: var(--secondary-color);
+    }
+
+    .footer-bottom {
+      background-color: #021a29;  
+      color: #D3D3D3;
+      font-size: 14px;
+      padding: 20px 0;
+      width: 100%;
+      border-top: none;
+    }
+  </style>
 </head>
 <body>
-    <div id="name-container"></div>
-    <script>
-        const container = document.getElementById('name-container');
-        const fragment = document.createDocumentFragment();
-        for (let i = 1; i <= 100; i++) {
-            const p = document.createElement('p');
-            p.textContent = "Abhishek Atul Naik";
-            fragment.appendChild(p);
-        }
-        container.appendChild(fragment);
-    </script>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+ 
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      
+      <span class="logo-text">Hariom<span>CLASEES</span></span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto gap-4">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Must Read</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Campus Drives</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+
+ 
+      <div class="d-flex gap-3 social-icons">
+       <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+       <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+       <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="background">
+  <div class="background-content text-center">
+    <h1 class="bg-title">Execute Campus Drives</h1>
+    <p class="bg-title-2">This Academic Year</p>
+    <a href="#" class="btn-custom">Explore Drives</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container py-5">
+    <div class="row">
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">HariomCLASSES</h5>
+        <p class="footer-text">
+          Best IT Training Institute in Pune offering job-oriented courses
+          with 100% placement assistance. Join us to kickstart your IT career.
+        </p>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="#">Our Courses</a></li>
+          <li><a href="#">Must Read</a></li>
+          <li><a href="#">Campus Drives</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Visit Campus</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">Popular Courses</h5>
+        <ul class="footer-links">
+          <li><a href="#">Full Stack Development</a></li>
+          <li><a href="#">Data Science & AI</a></li>
+          <li><a href="#">Python Programming</a></li>
+          <li><a href="#">Java Development</a></li>
+          <li><a href="#">Web Development</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">Contact Info</h5>
+        <p class="footer-text">
+          <strong>Head Office:</strong><br>
+          First Floor, Hari Om Towers, Office no.6, College Lane,<br>
+           Near Tara Pan Center,<br>
+          Pune, Maharashtra 
+        </p>
+        <p class="footer-text">
+          <strong>Pune Branch:</strong><br>
+          IT Park, Hinjewadi, Pune,<br>
+          Maharashtra 411057
+        </p>
+        <p class="footer-contact"><i class="fa-solid fa-phone"></i> +91-4525412541</p>
+        <p class="footer-contact"><i class="fa-solid fa-envelope"></i> hariomclasses@gmail.com</p>
+        <p class="footer-contact"><i class="fa-solid fa-clock"></i> Mon-Sat: 9:00 AM - 8:00 PM</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- copyright bottom -->
+  <div class="footer-bottom text-center py-3">
+    © 2026 HariomCLASSES - Best IT Training Institute in PUNE. All Rights Reserved.
+  </div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
