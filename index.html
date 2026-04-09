@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Drives</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  
+
+</head>
+<style>
+:root {
+  --primary-color: #03283D;
+  --secondary-color: #ff6a3d;
+  --text-light: #d3d3d3;
+  --white: #fff;
+  --navbar-height: 80px; /* Approximate height of the fixed navbar */
+}
+  
+.logo-img {
+  height: 55px;
+}
+
+ 
+.background {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('07-08-21-01-Engineering.png') no-repeat center center/cover;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ 
+
+.background-content {
+  /* Centering is now handled by flexbox on the parent */
+  color: var(--white);
+}
+
+.bg-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.bg-title-2 {
+  font-size: 1.5rem;
+}
+
+ 
+.nav-link {
+  font-size: 17px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+ 
+
+ 
+.social-icons a {
+  font-size: 20px;
+  color: black;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #0d6efd;
+}
+
+ 
+.footer {
+  background-color: var(--primary-color);   
+  width: 100%;
+  color: var(--white);
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary-color); 
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-contact {
+  color: var(--text-light);
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.footer-bottom {
+  background-color: var(--primary-color);  
+  color: #D3D3D3;
+  font-size: 14px;
+  border-top: 1px solid #0a3a53;
+  width: 100%;
+}
+
+
+</style>
+<body>
+<script>
+  document.body.style.paddingTop = 'var(--navbar-height)';
+</script>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+  <div class="container">
+ 
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="cropped-complete-logo-cropped.jpg" alt="Logo" class="logo-img">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto gap-4">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Must Read</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Campus Drives</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+
+ 
+      <div class="d-flex gap-3 social-icons">
+       <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+       <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+       <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="background">
+  <div class="background-content text-center">
+    <h1 class="bg-title">Execute Campus Drives</h1>
+    <p class="bg-title-2">This Academic Year</p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container py-5">
+    <div class="row">
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">PrudentCAMPUS</h5>
+        <p class="footer-text">
+          Best IT Training Institute in Aurangabad offering job-oriented courses
+          with 100% placement assistance. Join us to kickstart your IT career.
+        </p>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="#">Our Courses</a></li>
+          <li><a href="#">Must Read</a></li>
+          <li><a href="#">Campus Drives</a></li>
+          <li><a href="#">Jobs</a></li>
+          <li><a href="#">Visit Campus</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">Popular Courses</h5>
+        <ul class="footer-links">
+          <li><a href="#">Full Stack Development</a></li>
+          <li><a href="#">Data Science & AI</a></li>
+          <li><a href="#">Python Programming</a></li>
+          <li><a href="#">Java Development</a></li>
+          <li><a href="#">Web Development</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4">
+        <h5 class="footer-title">Contact Info</h5>
+        <p class="footer-text">
+          First Floor, Hari Om Towers, Office no.6, College Lane,<br>
+          Opp. Government Engineering, Near Tara Pan Center,<br>
+          Chhatrapati Sambhajinagar, Maharashtra 431001
+        </p>
+        <p class="footer-contact">📞 +91-4525412541</p>
+        <p class="footer-contact">📧 bhioklprasad@gmail.com</p>
+        <p class="footer-contact">🕒 Mon-Sat: 9:00 AM - 8:00 PM</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- copyright bottom -->
+  <div class="footer-bottom text-center py-3">
+    © 2026 PrudentCAMPUS - Best IT Training Institute in Aurangabad. All Rights Reserved.
+  </div>
+
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

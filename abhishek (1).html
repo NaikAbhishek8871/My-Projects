@@ -1,0 +1,27 @@
+<html>
+<head>
+<style>
+    /* Basic styling to mimic original output */
+    body {
+        font-family: sans-serif;
+    }
+    #name-container p {
+        margin: 0;
+        padding: 0.1em 0;
+    }
+</style>
+</head>
+<body>
+    <div id="name-container"></div>
+    <script>
+        const container = document.getElementById('name-container');
+        const fragment = document.createDocumentFragment();
+        for (let i = 1; i <= 100; i++) {
+            const p = document.createElement('p');
+            p.textContent = "Abhishek Atul Naik";
+            fragment.appendChild(p);
+        }
+        container.appendChild(fragment);
+    </script>
+</body>
+</html>
